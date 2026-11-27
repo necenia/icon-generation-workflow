@@ -2,10 +2,8 @@
 
 Copy the request for the current step and replace the fields in brackets. To run the full workflow, start with the [quick brief](brief.md).
 
-1. **References.** “For [categories and screen], propose two or three visual directions. Share reference links, explain what to borrow from each, and suggest an object for each category. Recommend one direction.”
-2. **Prompt.** “Write a generation prompt for [chosen direction] and map out the 3 × 3 grid. Specify the palette, materials, camera angle, lighting, and margins. Use spare cells for alternatives.”
-3. **Grid.** “Generate one trial grid with [Figma MCP / Imagine MCP]. Show the result, check legibility at [size], and recommend the best cells by coordinate.”
-4. **Close-ups.** “Rerender [coordinates and objects] as separate close-ups based on the crops. Preserve the silhouette, distinctive details, and lighting. Export transparent PNGs and check the edges.”
-5. **Layout.** “Place the PNGs in [frame link]. Check optical size and spacing. Show a screenshot or provide a placement map for manual insertion.”
-
-To compare styles, send “Rewrite the generation prompt using [new reference]. Keep the palette and cell map. Explain the changes to the shape, materials, camera angle, and lighting.”
+0. **References, if needed.** “For [screen and categories], suggest two or three visual directions, link to references, and recommend one.”
+1. **Grid.** “Use the attached references and these brand constraints: [palette, materials, shapes]. Generate a trial grid if you can. Otherwise, give me an English generation prompt and cell map.”
+2. **Close-ups.** “Make separate close-ups for [grid version, coordinates, and objects]. Match the cell crops. If you cannot render them, provide one English prompt per cell and specify the matching crop.”
+3. **PNG prep.** “Upscale these close-ups if needed for [target size], remove the background, and export transparent PNGs. Check the edges on light and dark backgrounds.”
+4. **Layout.** “Place the PNGs in [project or frame link] if you can edit it. Verify the size and spacing. If you cannot place them, provide the PNGs and a placement map.”
