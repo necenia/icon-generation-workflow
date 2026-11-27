@@ -1,5 +1,5 @@
-# Короткий бриф для агента
+# Quick brief for the agent
 
-> Пройди сценарий из AGENTS.md. Нужны иконки для карточек разделов учебного каталога мебели. Категории: гостиная, спальня, кухня, хранение, освещение, декор. Размер в интерфейсе 64×64 px. Фон карточек белый. Направление: матовые предметные 3D-рендеры с одним шалфейным акцентом #6B8371. Подбери референсы, предложи образы и подготовь сетку 3×3 с альтернативами для трёх категорий. Генератор: [Figma MCP / Imagine MCP]. Макет: [ссылка на тестовый фрейм]. Покажи сетку перед клоуз-апами.
+> Follow the workflow in AGENTS.md. I need icons for category cards in a sample furniture catalog. Categories: living room, bedroom, kitchen, storage, lighting, and decor. Icon size: 64 × 64 px. Card background: white. Direction: matte 3D product renders with one sage accent, #6B8371. Find references, propose an object for each category, and generate a 3 × 3 grid with alternatives for three categories. Generator: [Figma MCP / Imagine MCP]. Layout: [test frame link]. Show the grid before making close-ups.
 
-Замени учебные категории, размеры, палитру и ссылки реальными. Если нужна только подготовка, закончи запрос словами «Остановись после промпта и карты ячеек».
+Replace the sample categories, dimensions, palette, and links with your project details. For preparation only, add “Stop after the prompt and cell map.”

@@ -1,35 +1,37 @@
-# От брифа до иконок в макете
+# From brief to icons in a layout
 
-Выполняй шаги до результата, указанного пользователем. Запиши исходные категории, назначение, размер и фон в макете, палитру, ограничения и ссылку на целевой фрейм, если она есть. Выясни только пробелы, которые блокируют ближайший шаг. Сохраняй результаты в `runs/<название-запуска>/`. При продолжении открой предыдущий запуск, восстанови выбранное направление и карту ячеек, затем начни с незавершённого шага.
+Reply to the user in Russian throughout the workflow, including when the brief is in English. This applies to questions, proposals, progress updates, and the final handoff. Write generation prompts and new repository documentation in English. README.md is maintained in Russian.
 
-## 1. Найди референсы и предложи образы
+Follow the workflow up to the deliverable requested by the user. Record the categories, purpose, target icon size, background, palette, constraints, and target frame link if available. Ask only about gaps that block the next step. Save artifacts in `runs/<run-name>/`. When resuming, open the previous run, recover the chosen direction and cell map, and start at the first incomplete step.
 
-Начни с приложенных материалов. Где нужно, ищи по конкретным визуальным признакам, например `matte white product render three-quarter soft studio light`, и по предметным метафорам. Открой источники и проверь, что изображение видно. Предложи 2–3 направления и порекомендуй одно. Для каждого дай 1–2 ссылки, подпиши, какие ракурс, материал и свет берёшь, и предложи образы для категорий. Для спорной категории предложи альтернативу. Запиши выбор в `references.md`. Явно заданное направление сразу используй на шаге 2.
+## 1. Find references and propose icon concepts
 
-## 2. Собери промпт и карту ячеек
+Start with the materials supplied by the user. Search by specific visual properties when needed, such as `matte white product render three-quarter soft studio light`, and by objects that could represent the categories. Open sources and verify that the images are visible. Propose two or three directions and recommend one. For each direction, share one or two source links, explain which camera angle, material, and lighting to borrow, and suggest an object for each category. Offer an alternative where the subject is ambiguous. Record the chosen direction in `references.md`. If the user has already selected a direction, use it in step 2.
 
-Если пользователь запускает шаги вручную, ориентируйся на [запросы к агенту](examples/agent-requests.md). Напиши промпт заново под выбранные референсы. Зафиксируй ракурс, свет, фон, материалы, визуальный вес, поля и способ применения палитры. Для каждого ряда перечисли ячейки слева направо. Если категорий меньше девяти, оставь лишние ячейки для альтернатив или сократи сетку. Для длинной серии сделай несколько сеток с одинаковыми правилами. Запиши карту R1C1…R3C3 и английский промпт в `grid-prompt.md`.
+## 2. Write the prompt and map the cells
 
-Для смены стиля обнови визуальные признаки и проверь, что они совместимы с ограничениями сетки. Сохрани позиции предметов, чтобы можно было сравнить варианты. При изменении метафоры обнови карту ячеек.
+For a step-by-step run, use the [example requests](examples/agent-requests.md) as a guide. Write a new generation prompt based on the selected references. Specify the camera angle, lighting, background, materials, visual weight, margins, and use of the palette. List the cells in each row from left to right. If there are fewer than nine categories, use spare cells for alternatives or make a smaller grid. For a longer series, use multiple grids with consistent constraints. Save the cell map, such as R1C1 through R3C3, and the English generation prompt in `grid-prompt.md`.
 
-## 3. Сгенерируй сетку
+When changing the style, update the visual properties and check that they still fit the grid constraints. Keep the subjects in the same positions for comparison. Update the map when you replace an object.
 
-Проверь фактические инструменты и схемы MCP. Используй выбранный пользователем генератор. Для внешней генерации передавай только разрешённые для сервиса материалы.
+## 3. Generate the grid
 
-- **Figma MCP.** Используй `generate_image` в указанном редактируемом файле. Запроси квадрат и создай отдельный фрейм для пробы. Учитывай расход Figma AI credits. Инструмент принимает текстовый промпт. Визуальные свойства рефов опиши в тексте. Используй возвращённый адрес изображения или `download_assets` для выгрузки и сохрани ссылку на фрейм. Соблюдай требования активного клиента к сессии и Figma skills.
-- **Imagine MCP.** Найди подключённый инструмент генерации и прочитай его схему. Если он принимает изображения, приложи разрешённые референсы через объявленные параметры. Возьми фактический путь или URL из результата. Если Imagine недоступен, предложи Figma MCP в рамках доступа и бюджета или верни готовый промпт для ручного запуска.
-- Если генерация недоступна в обоих маршрутах, сохрани карту и промпт, назови конкретный блокер и попроси вернуть сетку для продолжения.
+Inspect the available MCP tools and their schemas. Use the generator requested by the user. Send only materials authorized for that external service.
 
-Сохрани `grid.png` или ссылку на результат рядом с использованным промптом. В `selection.md` запиши ссылку на конкретную версию сетки и выбранные координаты. Если есть новое направление, сохрани его отдельной версией. Посмотри на серию целиком и в целевом размере. Проверь смысл без подписи, единый ракурс и свет, сопоставимый вес, палитру и целые силуэты. Покажи сетку и предложи координаты лучших вариантов. Если выбор уже делегирован, зафиксируй его сам.
+- **Figma MCP.** Use `generate_image` in the specified editable file. Request a square image and use a separate frame for the trial. Account for Figma AI credit usage. The tool accepts a text prompt. Describe the visual properties of the references in words. Export with the returned image URL or `download_assets` and save the frame link. Follow the active client's requirements for Figma sessions and skills.
+- **Imagine MCP.** Find the connected generation tool and read its schema. If it supports image inputs, attach authorized references using its declared parameters. Use the actual path or URL returned by the tool. If Imagine is unavailable, propose Figma MCP within the available permissions and budget or provide the prompt for a manual run.
+- If neither route can generate an image, save the cell map and prompt. Explain what is blocking generation and ask the user to provide the resulting grid so you can resume.
 
-## 4. Сделай клоуз-апы
+Save `grid.png` or a link to the result alongside its prompt. In `selection.md`, record the exact grid version and the selected coordinates. Save new directions as separate versions. Review the full series and check how each object reads at the target size without a caption. Check camera angle, lighting, visual weight, palette, and whether each silhouette fits its cell. Show the grid and recommend the strongest cells by coordinate. If the user delegated selection, record your picks.
 
-Для каждой выбранной ячейки запиши координату, название и опорные детали. Вырежи ячейку из фактической сетки. Для неровной сетки определи границы по изображению. Передай кроп генератору, если он поддерживает вход изображений. Для текстового маршрута Figma опиши видимые признаки кропа в промпте и сверь новый рендер визуально. Когда нужно точное сохранение силуэта и перерисовка меняет форму, обработай исходный кроп и сообщи доступное разрешение. Если клиент не может выполнить кроп или перерендер, сохрани координаты и подготовленный промпт, чтобы пользователь мог передать нужное изображение и продолжить с этого шага.
+## 4. Make close-ups
 
-Экспортируй каждый выбранный объект отдельным PNG. Проверь альфа-канал и края на светлом и тёмном фоне. Убери ореол и сохрани тонкие детали. Апскейль, если разрешения мало. Сохрани `icons/<category>.png`, использованные промпты и связь файлов с ячейками.
+For each selected cell, record the coordinate, subject, and distinctive details. Crop the cell from the actual grid. If the cell boundaries are uneven, locate them in the image. Pass the crop to the generator when it supports image input. For text-only Figma generation, describe the visible features of the crop and compare the rerender with the original. If the silhouette must match exactly and rerendering changes it, process the original crop and report its usable resolution. If the client cannot crop or rerender, save the coordinates and prepared prompt so the user can provide the needed image and resume.
 
-## 5. Поставь в макет и проверь
+Export each selected object as a separate PNG. Check the alpha channel and inspect edges on light and dark backgrounds. Remove halos and preserve fine details. Upscale when the source resolution is too low. Save `icons/<category>.png`, the prompts used, and the mapping from files to cells.
 
-В Figma загрузи PNG через `upload_assets`. Используй существующие слоты и размеры. В тестовом фрейме проверь вписывание целого силуэта, оптический масштаб, выравнивание и читаемость рядом с текстом. Сверь финальный вид скриншотом. Когда файл или запись недоступны, подготовь PNG и карту «категория → файл → слот → размер» для ручной вставки.
+## 5. Place and verify icons in the layout
 
-В ответе дай ссылки на сетку, выбранные PNG и макет или карту размещения. Укажи, какие шаги реально выполнены и что нужно для продолжения. Рабочие материалы и выгрузки держи в папке запуска. Публикуй их только по разрешению владельца.
+In Figma, import the PNGs with `upload_assets`. Use the existing slots and sizes. In a test frame, check that each full silhouette fits, and review optical size, alignment, and legibility next to text. Verify the final appearance from a screenshot. When the file or write access is unavailable, deliver the PNGs with a placement map listing each category, file, slot, and size.
+
+In the handoff, link to the grid, selected PNGs, and the layout or placement map. State which steps were completed and what is needed to resume, if anything. Keep working materials and exports inside the run directory. Publish them only with the owner's permission.
