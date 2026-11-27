@@ -13,5 +13,5 @@
 Для генерации нужен Figma MCP с доступом на запись и кредитами либо подключённый Imagine MCP. Для вставки в Figma укажи ссылку на фрейм. Без генератора можно пройти поиск, разработку направления и подготовку промптов.
 
 - [Рабочий сценарий для агента](AGENTS.md)
-- [Промпты для сетки и отдельных иконок](prompts/templates.md)
+- [Запросы агенту для каждого шага](examples/agent-requests.md)
 - [Подключение и возможности Figma MCP](https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/)
